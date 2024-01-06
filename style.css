@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to top, #6fa6d6, #4972a0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    height: 85vh;
+    width: 80vw;
+    background-image: linear-gradient(to right, #325e7a, #5c859c);
+    border-radius: 14px;
+    position: relative;
+}
+
+.ball {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: fixed;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+}
+
+.ball_effect {
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    animation: spinBall 0.1s linear infinite;
+    box-shadow: inset 0 0 18px #fff, inset 6px 0 18px #8eb4e6,
+        inset -6px 0 18px #5790bf, inset 6px 0 30px #8eb4e6,
+        inset -6px 0 30px #5790bf, 0 0 18px #fff, -4px 0 18px
+        #8eb4e6, 4px 0 18px #5790bf;
+}
+
+@keyframes spinBall {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.paddle {
+    height: 100px;
+    width: 18px;
+    border-radius: 50%;
+    position: fixed;
+}
+
+.paddle_1 {
+    top: calc(7.5vh + 55px);
+    left: calc(10vw + 30px);
+    box-shadow: inset 0 0 18px #fff, inset -6px 0 18px #add4f6,
+        inset 6px 0 18px #467fba, inset -6px 0 30px #add4f6,
+        inset 6px 0 30px #467fba, 0 0 18px #fff, 4px 0 18px
+        #add4f6, -4px 0 18px #467fba;
+}
+
+.paddle_2 {
+    top: calc(85vh + 7.5vh - 100px - 55px);
+    right: calc(10vw + 30px);
+    box-shadow: inset 0 0 18px #fff, inset 6px 0 18px #add4f6,
+        inset -6px 0 18px #467fba, inset 6px 0 30px #add4f6,
+        inset -6px 0 30px #467fba, 0 0 18px #fff, -4px 0 18px
+        #add4f6, 4px 0 18px #467fba;
+}
+
+.player_1_score,
+.player_2_score {
+    height: 50px;
+    width: 50px;
+    color: #add4f6;
+    position: fixed;
+    margin-top: 30px;
+}
+
+.player_1_score {
+    left: 30vw;
+}
+
+.player_2_score {
+    left: 70vw;
+}
+
+.message {
+    position: fixed;
+    height: 10vh;
+    width: 30vw;
+    color: #c9cbff;
+    left: 38vw;
+    margin: 30px auto 0 auto;
+}
